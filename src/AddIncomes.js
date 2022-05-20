@@ -7,7 +7,9 @@ function AddIncomes() {
     initialValues: {
       date: "",
       time: "",
-      income: "",
+      income:"",
+      incometype:"",
+      amount: "",
     },
     validate: (values) => {
       const errors = {};
@@ -19,6 +21,12 @@ function AddIncomes() {
       }
       if (!values.income) {
         errors.income = "Income is required";
+      }
+      if (!values.incometype) {
+        errors.incometype = "Income type is required";
+      }
+      if (!values.amount) {
+        errors.amount = "Amount is required";
       }
       return errors;
     },
@@ -64,19 +72,22 @@ function AddIncomes() {
       console.log(error);
     }
   };
-
+let showdate=new Date();
+let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getFullYear();
   return (
     <div className="container">
-      <h3 className="mt-3 fw-bolder">Add Your Incomes</h3>
+      <h3 className="mt-3 fw-bolder text-center text-danger fst-italic">Add Your Incomes</h3>
       <div className="row mt-3">
-        <div className="col-lg-6">
-          <form onSubmit={formik.handleSubmit}>
+        <div className="col-lg-12">
+        <form onSubmit={formik.handleSubmit}>
             <div className="row">
               <div className="col-lg-6">
                 <label>Date</label>
                 <input
                   className="form-control"
                   type={"date"}
+                  // value={displaydate}
+                  // readOnly="false"
                   name="date"
                   onChange={formik.handleChange}
                   value={formik.values.date}
@@ -95,17 +106,48 @@ function AddIncomes() {
                 <span style={{ color: "red" }}>{formik.errors.time}</span>
               </div>
             </div>
+            
             <div className="row mt-2">
               <div className="col-lg-6">
                 <label>Income</label>
-                <input
-                  className="form-control"
-                  type={"number"}
+                <select
+                  className="form-select"
                   name="income"
                   onChange={formik.handleChange}
                   value={formik.values.income}
-                ></input>
+                >
+                  <option>Cash</option>
+                  <option>Account</option>
+                </select>
                 <span style={{ color: "red" }}>{formik.errors.income}</span>
+              </div>
+              <div className="col-lg-6">
+                <label>Income Type</label>
+                <select
+                  className="form-select"
+                  name="incometype"
+                  onChange={formik.handleChange}
+                  value={formik.values.incometype}
+                >
+                  <option>Salary</option>
+                  <option>Bonus</option>
+                  <option>Incentive</option>
+                  <option>PF</option>
+                </select>
+                <span style={{ color: "red" }}>{formik.errors.incometype}</span>
+              </div> 
+              <div className="row mt-2">
+              <div className="col-lg-6">
+                <label>Amount(₹)</label>
+                <input
+                  className="form-control"
+                  type={"number"}
+                  name="amount"
+                  onChange={formik.handleChange}
+                  value={formik.values.amount}
+                ></input>
+                <span style={{ color: "red" }}>{formik.errors.amount}</span>
+              </div>
               </div>
               <div className="row">
                 <div className="col-lg-12">
@@ -119,14 +161,17 @@ function AddIncomes() {
             </div>
           </form>
         </div>
-
-        <div class="col-lg-6">
+        </div>
+        <div className="row mt-3">
+        <div class="col-lg-12">
           <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>
                 <th scope="col">Income</th>
+                <th scope="col">Income Type</th>
+                <th scope="col">Amount(₹)</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -137,9 +182,11 @@ function AddIncomes() {
                     <td>{e.date}</td>
                     <td>{e.time}</td>
                     <td>{e.income}</td>
+                    <td>{e.incometype}</td>
+                    <td>{e.amount}</td>
                     <td>
                       <button
-                        className="btn btn-danger ms-2"
+                        className="btn btn-sm btn-danger ms-2"
                         onClick={() => handledelete(e._id)}
                       >
                         Delete
