@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-primary bg-dark ">
       <div class="container-fluid">
         <Link
           class="navbar-brand fs-4 fw-bolder text-uppercase text-warning"
           to="/"
         >
-          Money Manager
+          <img className="img-fluid" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/50/external-money-saving-economy-flatart-icons-flat-flatarticons.png"></img> Money Manager
         </Link>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler btn-primary bg-white"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -20,7 +20,7 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"><img className="img-fluid img-center img-white" src="https://img.icons8.com/ios-filled/20/stripped-patterns.png"></img></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -71,6 +71,11 @@ function Navbar() {
                   </Link>
                 </li>
               </ul>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link active fs-5" aria-current="page" to="/MoneyInfo">
+                Money Info
+              </Link>
             </li>
             <li class="nav-item ms-3 fs-5">
               <Link

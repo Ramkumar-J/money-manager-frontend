@@ -66,7 +66,7 @@ function DailyPlans() {
                     <td>{dailyplan.price}</td>
                     <td>
                       <button
-                        className="btn btn-danger mx-1"
+                        className="btn btn-sm btn-danger mx-1"
                         type="button"
                         onClick={() => handledelete(dailyplan._id)}
                       >

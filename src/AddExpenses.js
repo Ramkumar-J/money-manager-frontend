@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 function AddExpenses() {
+  let totalexpense=0;
   let formik = useFormik({
     initialValues: {
       date: "",
       time: "",
+      expense:"",
       expensetype: "",
       price: "",
+      description:"",
     },
     validate: (values) => {
       const errors = {};
@@ -16,6 +19,9 @@ function AddExpenses() {
       }
       if (!values.time) {
         errors.time = "Time is required";
+      }
+      if (!values.expense) {
+        errors.expense = "Expense is required";
       }
       if (!values.expensetype) {
         errors.expensetype = "Expense type is required";
@@ -70,9 +76,9 @@ function AddExpenses() {
 
   return (
     <div className="container">
-      <h3 className="mt-3 fw-bolder">Add Your Expenses</h3>
+      <h2 className="mt-3 fw-bolder text-center text-danger fst-italic">Add Your Expenses</h2>
       <div className="row mt-3">
-        <div className="col-lg-6">
+        <div className="col-lg-12">
           <form onSubmit={formik.handleSubmit}>
             <div className="row">
               <div className="col-lg-6">
@@ -99,8 +105,25 @@ function AddExpenses() {
               </div>
             </div>
             <div className="row mt-2">
+            <div className="col-lg-6">
+                <label>Expense</label>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  name="expense"
+                  onChange={formik.handleChange}
+                  value={formik.values.expense}
+                >
+                  <option selected>None</option>
+                  <option>Cash</option>
+                  <option>Account</option>
+                </select>
+                <span style={{ color: "red" }}>
+                  {formik.errors.expense}
+                </span>
+              </div>
               <div className="col-lg-6">
-                <label>Expense type</label>
+                <label>Expense Type</label>
                 <select
                   class="form-select"
                   aria-label="Default select example"
@@ -114,14 +137,18 @@ function AddExpenses() {
                   <option>Cloths</option>
                   <option>Electronics</option>
                   <option>Entertainment</option>
+                  <option>Education</option>
+                  <option>Health</option>
                   <option>Savings</option>
+                  <option>Others</option>
                 </select>
                 <span style={{ color: "red" }}>
                   {formik.errors.expensetype}
                 </span>
               </div>
+              <div className="row mt-2">
               <div className="col-lg-6">
-                <label>Price</label>
+                <label>Price(₹)</label>
                 <input
                   className="form-control"
                   type={"number"}
@@ -130,6 +157,17 @@ function AddExpenses() {
                   value={formik.values.price}
                 ></input>
                 <span style={{ color: "red" }}>{formik.errors.price}</span>
+              </div>
+              <div className="col-lg-6">
+                <label>Description</label>
+                <input
+                  className="form-control"
+                  type={"text"}
+                  name="description"
+                  onChange={formik.handleChange}
+                  value={formik.values.description}
+                ></input>
+              </div>
               </div>
               <div className="row">
                 <div className="col-lg-12">
@@ -143,29 +181,35 @@ function AddExpenses() {
             </div>
           </form>
         </div>
-
-        <div class="col-lg-6">
+        </div>
+        <div className="row mt-3">
+        <div class="col-lg-12">
           <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>
+                <th scope="col">Expense</th>
                 <th scope="col">Expense type</th>
-                <th scope="col">Price</th>
+                <th scope="col">Price(₹)</th>
+                <th scope="col">Description</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               {expenses.map((e) => {
+                totalexpense +=e.price;
                 return (
                   <tr>
                     <td>{e.date}</td>
                     <td>{e.time}</td>
+                    <td>{e.expense}</td>
                     <td>{e.expensetype}</td>
                     <td>{e.price}</td>
+                    <td>{e.description}</td>
                     <td>
                       <button
-                        className="btn btn-danger ms-2"
+                        className="btn btn-sm btn-danger ms-2"
                         onClick={() => handledelete(e._id)}
                       >
                         Delete
@@ -177,6 +221,7 @@ function AddExpenses() {
             </tbody>
           </table>
         </div>
+        <p className="fw-bold">Total - ₹{totalexpense}</p>
       </div>
     </div>
   );

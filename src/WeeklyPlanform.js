@@ -50,9 +50,9 @@ function WeeklyPlanform() {
   });
   return (
     <div className="container">
-      <h3 className="mt-3 fw-bolder text-center fs-2 text-danger fst-italic">
+      <h2 className="mt-3 fw-bolder text-center text-danger fst-italic">
         Weekly Budget
-      </h3>
+      </h2>
       <div className="row mt-3">
         <div className="col-lg-12">
           <form onSubmit={formik.handleSubmit}>

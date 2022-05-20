@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function AddIncomes() {
+ let totalincome=0;
   let formik = useFormik({
     initialValues: {
       date: "",
@@ -36,6 +37,7 @@ function AddIncomes() {
           "https://moneymanager-nodeapp.herokuapp.com/AddIncomes",
           values
         );
+        
       } catch (error) {
         console.log(error);
       }
@@ -50,6 +52,7 @@ function AddIncomes() {
           "https://moneymanager-nodeapp.herokuapp.com/AddIncomes"
         );
         setNewincomes(incomedata.data);
+        // setTotal(total+incomedata.data.amount)
       } catch (error) {
         console.log(error);
       }
@@ -76,7 +79,7 @@ let showdate=new Date();
 let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getFullYear();
   return (
     <div className="container">
-      <h3 className="mt-3 fw-bolder text-center text-danger fst-italic">Add Your Incomes</h3>
+      <h2 className="mt-3 fw-bolder text-center text-danger fst-italic">Add Your Incomes</h2>
       <div className="row mt-3">
         <div className="col-lg-12">
         <form onSubmit={formik.handleSubmit}>
@@ -116,6 +119,7 @@ let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getF
                   onChange={formik.handleChange}
                   value={formik.values.income}
                 >
+                  <option selected>None</option>
                   <option>Cash</option>
                   <option>Account</option>
                 </select>
@@ -129,6 +133,7 @@ let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getF
                   onChange={formik.handleChange}
                   value={formik.values.incometype}
                 >
+                  <option selected>None</option>
                   <option>Salary</option>
                   <option>Bonus</option>
                   <option>Incentive</option>
@@ -177,6 +182,7 @@ let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getF
             </thead>
             <tbody>
               {incomes.map((e) => {
+                totalincome +=e.amount;
                 return (
                   <tr>
                     <td>{e.date}</td>
@@ -199,6 +205,7 @@ let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getF
           </table>
         </div>
       </div>
+      <p className="fw-bold">Total - ₹{totalincome}</p>
     </div>
   );
 }

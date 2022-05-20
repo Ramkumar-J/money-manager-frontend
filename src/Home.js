@@ -7,8 +7,8 @@ function Home() {
       <div className="row">
         <div className="col-lg-12">
           <div className="row mt-5">
-            <div class="offset-2 col-lg-4">
-              <div class="card mb-6 rounded-3 shadow-sm border-success">
+            <div class="col-lg-4 offset-2">
+              <div class="card mb-4 rounded-3 shadow-sm border-success">
                 <div class="card-header py-3 text-white bg-success border-success">
                   <h4 class="my-0 fw-normal text-center">Daily Plan</h4>
                 </div>
@@ -55,7 +55,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div class="offset-2 col-lg-4">
+            <div class="col-lg-4 offset-2">
               <div class="card mb-4 rounded-3 shadow-sm border-danger">
                 <div class="card-header py-3 text-white bg-danger border-danger">
                   <h4 class="my-0 fw-normal text-center">Monthly Plan</h4>

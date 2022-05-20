@@ -16,6 +16,7 @@ import MonthlyPlans from "./MonthlyPlans";
 import YearlyPlans from "./YearlyPlans";
 import AddExpenses from "./AddExpenses";
 import AddIncomes from "./AddIncomes";
+import MoneyInfo from "./MoneyInfo";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/YearlyPlans" element={<YearlyPlans />} />
             <Route path="/AddExpenses" element={<AddExpenses />} />
             <Route path="/AddIncomes" element={<AddIncomes />} />
+            <Route path="/MoneyInfo" element={<MoneyInfo />} />
           </Routes>
         </div>
       </div>
