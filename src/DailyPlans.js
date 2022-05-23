@@ -16,7 +16,7 @@ function DailyPlans() {
     }
     fetchDailydata();
   });
-
+// Note
   let handledelete = async (id) => {
     try {
       let ask = window.confirm(
