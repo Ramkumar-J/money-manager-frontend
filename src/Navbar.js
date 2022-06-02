@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-primary bg-dark ">
+    <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
       <div class="container-fluid">
         <Link
-          class="navbar-brand fs-4 fw-bolder text-uppercase text-warning"
+          class="navbar-brand fs-3 fw-bolder text-uppercase text-warning font"
           to="/"
         >
           <img className="img-fluid" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/50/external-money-saving-economy-flatart-icons-flat-flatarticons.png"></img> Money Manager
@@ -23,15 +23,15 @@ function Navbar() {
           <span class="navbar-toggler-icon"><img className="img-fluid img-center img-white" src="https://img.icons8.com/ios-filled/20/stripped-patterns.png"></img></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
             <li class="nav-item">
-              <Link class="nav-link active fs-5" aria-current="page" to="/Home">
+              <Link class="nav-link active fs-5 text-white" aria-current="page" to="/Home">
                 Home
               </Link>
             </li>
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle fs-5"
+                class="nav-link dropdown-toggle fs-5 text-white"
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -49,14 +49,14 @@ function Navbar() {
                 <li>
                   <hr class="dropdown-divider" />
                 </li>
-                <li>
+                {/* <li>
                   <Link class="dropdown-item" to="/WeeklyPlans">
                     Weekly Plans
                   </Link>
                 </li>
                 <li>
                   <hr class="dropdown-divider" />
-                </li>
+                </li> */}
                 <li>
                   <Link class="dropdown-item" to="/MonthlyPlans">
                     Monthly Plans
@@ -73,11 +73,11 @@ function Navbar() {
               </ul>
             </li>
             <li class="nav-item">
-              <Link class="nav-link active fs-5" aria-current="page" to="/MoneyInfo">
-                Money Info
+              <Link class="nav-link active fs-5 text-white" aria-current="page" to="/MoneyInfo">
+                Tracker
               </Link>
             </li>
-            <li class="nav-item ms-3 fs-5">
+            {/* <li class="nav-item ms-3 fs-5">
               <Link
                 class="nav-link btn btn-outline-success text-white btn-sm fs-5 m-1 p-1"
                 to="/AddIncomes"
@@ -92,7 +92,7 @@ function Navbar() {
               >
                 Add Expenses
               </Link>
-            </li>
+            </li> */}
           </ul>
           <form class="d-flex">
             <input

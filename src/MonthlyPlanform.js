@@ -8,21 +8,18 @@ function MonthlyPlanform() {
   let formik = useFormik({
     initialValues: {
       month: "",
-      income: "",
-      expense: "",
+      budget: "",
       expensetype: "",
       price: "",
+      description: "",
     },
     validate: (values) => {
       const errors = {};
       if (!values.month) {
         errors.month = "Month is required";
       }
-      if (!values.income) {
-        errors.income = "Income is required";
-      }
-      if (!values.expense) {
-        errors.time = "Time is required";
+      if (!values.budget) {
+        errors.budget = "Budget is required";
       }
       if (!values.expensetype) {
         errors.expensetype = "Expense type is required";
@@ -46,9 +43,9 @@ function MonthlyPlanform() {
   });
   return (
     <div className="container">
-      <h2 className="mt-3 fw-bolder text-center text-danger fst-italic">
+      <h1 className="mt-3 fw-bolder text-center text-danger fst-italic">
         Monthly Budget
-      </h2>
+      </h1>
       <div className="row mt-3">
         <div className="col-lg-12">
           <form onSubmit={formik.handleSubmit}>
@@ -65,29 +62,18 @@ function MonthlyPlanform() {
                 <span style={{ color: "red" }}>{formik.errors.month}</span>
               </div>
               <div className="col-lg-6">
-                <label>Income</label>
+                <label>Budget</label>
                 <input
                   className="form-control"
                   type={"number"}
-                  name="income"
+                  name="budget"
                   onChange={formik.handleChange}
-                  value={formik.values.income}
+                  value={formik.values.budget}
                 ></input>
-                <span style={{ color: "red" }}>{formik.errors.income}</span>
+                <span style={{ color: "red" }}>{formik.errors.budget}</span>
               </div>
             </div>
             <div className="row mt-3">
-              <div className="col-lg-6">
-                <label>Expense</label>
-                <input
-                  className="form-control"
-                  type={"number"}
-                  name="expense"
-                  onChange={formik.handleChange}
-                  value={formik.values.expense}
-                ></input>
-                <span style={{ color: "red" }}>{formik.errors.expense}</span>
-              </div>
               <div className="col-lg-6">
                 <label>Expense type</label>
                 <select
@@ -109,9 +95,8 @@ function MonthlyPlanform() {
                   {formik.errors.expensetype}
                 </span>
               </div>
-              <div className="row mt-3">
-                <div className="col-lg-6">
-                  <label>Price</label>
+              <div className="col-lg-6">
+                  <label>Price(₹)</label>
                   <input
                     className="form-control"
                     type={"number"}
@@ -123,6 +108,18 @@ function MonthlyPlanform() {
                 </div>
               </div>
               <div className="row mt-3">
+                <div className="col-lg-6">
+                <label>Description</label>
+                <input
+                  className="form-control"
+                  type={"text"}
+                  name="description"
+                  onChange={formik.handleChange}
+                  value={formik.values.description}
+                ></input>
+              </div>
+              </div>
+              <div className="row mt-3">
                 <div className="col-lg-12">
                   <input
                     className="btn btn-primary mt-2"
@@ -131,7 +128,6 @@ function MonthlyPlanform() {
                   ></input>
                 </div>
               </div>
-            </div>
           </form>
         </div>
       </div>

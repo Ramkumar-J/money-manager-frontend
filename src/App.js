@@ -17,13 +17,14 @@ import YearlyPlans from "./YearlyPlans";
 import AddExpenses from "./AddExpenses";
 import AddIncomes from "./AddIncomes";
 import MoneyInfo from "./MoneyInfo";
+import DailyPlanView from "./DailyPlanView";
 
 function App() {
   return (
     <BrowserRouter>
-      <div id="wrapper">
+      <div id="wrapper" className="home-bg">
         <Navbar></Navbar>
-        <div class="container-fluid">
+        <div className="container-fluid">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
@@ -38,6 +39,8 @@ function App() {
             <Route path="/AddExpenses" element={<AddExpenses />} />
             <Route path="/AddIncomes" element={<AddIncomes />} />
             <Route path="/MoneyInfo" element={<MoneyInfo />} />
+            <Route path="/DailyPlanView" element={<DailyPlanView />} />
+            <Route path="/DailyPlanView/:id" element={<DailyPlanView />} />
           </Routes>
         </div>
       </div>

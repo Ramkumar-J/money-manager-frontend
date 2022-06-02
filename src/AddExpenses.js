@@ -67,7 +67,7 @@ function AddExpenses() {
         await axios.delete(
           `https://moneymanager-nodeapp.herokuapp.com/AddExpenses/${id}`
         );
-        alert("data deleted");
+        // alert("data deleted");
       }
     } catch (error) {
       console.log(error);

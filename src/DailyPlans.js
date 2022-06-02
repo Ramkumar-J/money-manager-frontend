@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function DailyPlans() {
   const [dailyplans, setDailyplans] = useState([]);
@@ -10,6 +11,7 @@ function DailyPlans() {
           "https://moneymanager-nodeapp.herokuapp.com/DailyPlans"
         );
         setDailyplans(daily.data);
+        console.log(dailyplans);
       } catch (error) {
         console.log(error);
       }
@@ -26,7 +28,6 @@ function DailyPlans() {
         await axios.delete(
           `https://moneymanager-nodeapp.herokuapp.com/DailyPlans/${id}`
         );
-        alert("data deleted");
       }
     } catch (error) {
       console.log(error);
@@ -48,10 +49,10 @@ function DailyPlans() {
             <thead>
               <tr>
                 <th>Date</th>
-                <th>Income</th>
-                <th>Expense</th>
+                <th>Budget</th>
                 <th>Expense Type</th>
-                <th>Price</th>
+                <th>Price(₹)</th>
+                <th>Description</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -60,17 +61,23 @@ function DailyPlans() {
                 return (
                   <tr>
                     <td>{dailyplan.date}</td>
-                    <td>{dailyplan.income}</td>
-                    <td>{dailyplan.expense}</td>
+                    <td>{dailyplan.budget}</td>
                     <td>{dailyplan.expensetype}</td>
                     <td>{dailyplan.price}</td>
+                    <td>{dailyplan.description}</td>
                     <td>
+                    <Link
+                        className="btn btn-sm"
+                        type="button"
+                      to={`/DailyPlanView/${dailyplan._id}`}
+                      >
+                        <img className="img-fluid" src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/20/external-view-user-interface-kmg-design-glyph-kmg-design.png"></img>
+                      </Link>
                       <button
-                        className="btn btn-sm btn-danger mx-1"
+                        className="btn btn-sm"
                         type="button"
                         onClick={() => handledelete(dailyplan._id)}
-                      >
-                        Delete
+                      ><img className="img-fluid" src="https://img.icons8.com/windows/20/delete-forever.png"></img>
                       </button>
                     </td>
                   </tr>

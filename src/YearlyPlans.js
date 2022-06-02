@@ -26,7 +26,6 @@ function YearlyPlans() {
         await axios.delete(
           `https://moneymanager-nodeapp.herokuapp.com/YearlyPlans/${id}`
         );
-        alert("data deleted");
       }
     } catch (error) {
       console.log(error);
@@ -48,10 +47,10 @@ function YearlyPlans() {
             <thead>
               <tr>
                 <th>Year</th>
-                <th>Income</th>
-                <th>Expense</th>
+                <th>Budget</th>
                 <th>Expense Type</th>
-                <th>Price</th>
+                <th>Price(₹)</th>
+                <th>Description</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -60,17 +59,17 @@ function YearlyPlans() {
                 return (
                   <tr>
                     <td>{yearlyplan.year}</td>
-                    <td>{yearlyplan.income}</td>
-                    <td>{yearlyplan.expense}</td>
+                    <td>{yearlyplan.budget}</td>
                     <td>{yearlyplan.expensetype}</td>
                     <td>{yearlyplan.price}</td>
+                    <td>{yearlyplan.description}</td>
                     <td>
                       <button
-                        className="btn btn-sm btn-danger mx-1"
+                        className="btn btn-sm mx-1"
                         type="button"
                         onClick={() => handledelete(yearlyplan._id)}
                       >
-                        Delete
+                        <img className="img-fluid" src="https://img.icons8.com/windows/20/delete-forever.png"></img>
                       </button>
                     </td>
                   </tr>
