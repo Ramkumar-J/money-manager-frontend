@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
+    <nav class="navbar navbar-expand-md navbar-primary bg-transparant">
       <div class="container-fluid">
         <Link
           class="navbar-brand fs-3 fw-bolder text-uppercase text-warning font"
           to="/"
         >
-          <img className="img-fluid" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/50/external-money-saving-economy-flatart-icons-flat-flatarticons.png"></img> Money Manager
+          <img className="img-fluid" src="https://img.icons8.com/fluency/50/money-box.png"></img> Money Manager
         </Link>
         <button
           class="navbar-toggler btn-primary bg-white"
@@ -102,7 +102,7 @@ function Navbar() {
               aria-label="Search"
             />
             <button class="btn btn-outline-primary" type="submit">
-              Search
+              <img src="https://img.icons8.com/glyph-neue/20/search--v1.png"></img>
             </button>
           </form>
         </div>

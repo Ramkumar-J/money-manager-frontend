@@ -50,7 +50,7 @@ function YearlyPlanform() {
         <div className="col-lg-12">
           <form onSubmit={formik.handleSubmit}>
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label>Year</label>
                 <input
                   className="form-control"
@@ -61,7 +61,7 @@ function YearlyPlanform() {
                 ></input>
                 <span style={{ color: "red" }}>{formik.errors.year}</span>
               </div>
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label>Budget</label>
                 <input
                   className="form-control"
@@ -75,7 +75,7 @@ function YearlyPlanform() {
             </div>
             <div className="row mt-3">
               
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label>Expense type</label>
                 <select
                   class="form-select"
@@ -96,7 +96,7 @@ function YearlyPlanform() {
                   {formik.errors.expensetype}
                 </span>
               </div>
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                   <label>Price(₹)</label>
                   <input
                     className="form-control"
@@ -109,7 +109,7 @@ function YearlyPlanform() {
                 </div>
                 </div>
               <div className="row mt-3">
-                <div className="col-lg-6">
+                <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label>Description</label>
                 <input
                   className="form-control"

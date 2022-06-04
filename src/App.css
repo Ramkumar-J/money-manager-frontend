@@ -12,7 +12,10 @@
 /* .card-size{
   width:350px;
 } */
- /* .home-bg{ */
-  /* background-image: linear-gradient(to right top, #23b0b5, #4fb5b9, #6bbabd, #83bfc1, #98c4c5); */
-  /* background-color: rgb(218, 255, 246); */
-/* }  */
+ .home-bg{
+  background:url(https://cdn.wallpapersafari.com/42/71/yoD8KJ.jpg);
+  /* background-blend-mode: luminosity; */
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 100vh;
+} 

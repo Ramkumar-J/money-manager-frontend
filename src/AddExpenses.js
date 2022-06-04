@@ -183,7 +183,7 @@ function AddExpenses() {
         </div>
         </div>
         <div className="row mt-3">
-        <div class="col-lg-12">
+        <div class="col-lg-12 table-responsive">
           <table class="table table-striped">
             <thead>
               <tr>

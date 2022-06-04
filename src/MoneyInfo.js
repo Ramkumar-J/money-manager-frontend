@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 function MoneyInfo(props){
     const [incomes, setNewincomes] = useState([]);
     const[totalIncome,setTotalIncome]=useState(0);
@@ -79,24 +80,47 @@ function MoneyInfo(props){
   };
     return (
         <div className="container">
-            <hr></hr>
-        <div className="row mt-2 ms-5 me-5">
-            <div className="col-lg-4 fw-bold fs-5 text-center">
+            {/* <hr></hr> */}
+            <p className="text-center text-primary fw-bold fs-4 mt-3 mb-0">"Do not save what is left after spending,
+      but spend what is left after saving."</p>
+      <p className="text-end text-primary fw-bold fs-4 mt-1 me-5">– Warren Buffett</p>
+      <div className="row mt-0 mb-0">
+      <div className="col-sm-12 col-md-12 col-lg-6">
+              <Link
+                class="nav-link btn btn-outline-success text-dark btn-sm fw-bold fs-4 mt-3 mx-auto w-50 h-75 p-0"
+                to="/AddIncomes"
+              >
+                <img className="img-fluid mt-0 mb-0" src="https://img.icons8.com/external-prettycons-solid-prettycons/30/external-up-arrow-orientation-prettycons-solid-prettycons.png"></img> Add Incomes
+              </Link>  
+      </div>
+      <div className="col-sm-12 col-md-12 col-lg-6">
+      
+              <Link
+                class="nav-link btn btn-outline-danger text-dark btn-sm fw-bold fs-4 mt-3 mx-auto w-50 h-75 p-0"
+                to="/AddExpenses"
+              >
+                <img className="img-fluid mb-0 mt-0" src="https://img.icons8.com/external-prettycons-solid-prettycons/30/external-down-arrow-orientation-prettycons-solid-prettycons.png"></img> Add Expenses
+              </Link>
+            
+      </div>
+      </div>
+        <div className="row mt-3 ms-5 me-5">
+            <div className="col-sm-4 col-md-4 col-lg-4 fw-bold fs-5 text-center">
                 <p>Income</p>
                 <p className="text-success">₹{totalIncome}</p>
             </div>
-            <div className="col-lg-4 fw-bold fs-5 text-center">
+            <div className="col-sm-4 col-md-4 col-lg-4 fw-bold fs-5 text-center">
                 <p>Expense</p>
                 <p className="text-danger">₹{totalExpense}</p>
             </div>
-            <div className="col-lg-4 fw-bold fs-5 text-center">
+            <div className="col-sm-4 col-md-4 col-lg-4 fw-bold fs-5 text-center">
                 <p>Balance</p>
                 <p className="text-secondary">₹{totalIncome - totalExpense}</p>
             </div>
         </div>
-        <hr></hr>
+        {/* <hr></hr> */}
         <div className="row mt-2">
-        <div class="col-lg-12">
+        <div class="col-lg-12 table-responsive">
           <table class="table table-striped">
             <thead>
               <tr>
