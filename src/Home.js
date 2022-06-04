@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div className="container bg-money">
-      <p className="text-center text-primary fw-bold fs-4 mt-3 mb-0">"Do not save what is left after spending,
+      <p className="text-center text-danger fw-bold fs-3 mt-3 mb-0">"Do not save what is left after spending,
       but spend what is left after saving."</p>
-      <p className="text-end text-primary fw-bold fs-4 mt-1 me-5">– Warren Buffett</p>
+      <p className="text-end text-danger fw-bold fs-3 mt-1 me-5">– Warren Buffett</p>
       <div className="row mt-0 mb-0">
       <div className="col-sm-12 col-md-12 col-lg-6">
               <Link
-                class="nav-link btn btn-outline-success text-dark btn-sm fw-bold fs-4 mt-3 mx-auto w-50 h-75 p-0"
+                class="nav-link btn btn-outline-success text-white btn-sm fw-bold fs-4 mt-3 mx-auto w-50 h-75 p-0"
                 to="/AddIncomes"
               >
                 <img className="img-fluid mt-0 mb-0" src="https://img.icons8.com/external-prettycons-solid-prettycons/30/external-up-arrow-orientation-prettycons-solid-prettycons.png"></img> Add Incomes
@@ -19,7 +19,7 @@ function Home() {
       <div className="col-sm-12 col-md-12 col-lg-6">
       
               <Link
-                class="nav-link btn btn-outline-danger text-dark btn-sm fw-bold fs-4 mt-3 mx-auto w-50 h-75 p-0"
+                class="nav-link btn btn-outline-danger text-white btn-sm fw-bold fs-4 mt-3 mx-auto w-50 h-75 p-0"
                 to="/AddExpenses"
               >
                 <img className="img-fluid mb-0 mt-0" src="https://img.icons8.com/external-prettycons-solid-prettycons/30/external-down-arrow-orientation-prettycons-solid-prettycons.png"></img> Add Expenses
