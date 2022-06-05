@@ -96,18 +96,18 @@ function DailyPlanform() {
                 </span>
               </div>
               <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                  <label>Price(₹)</label>
-                  <input
-                    className="form-control"
-                    type={"number"}
-                    name="price"
-                    onChange={formik.handleChange}
-                    value={formik.values.price}
-                  ></input>
-                  <span style={{ color: "red" }}>{formik.errors.price}</span>
-                </div>
+                <label>Price(₹)</label>
+                <input
+                  className="form-control"
+                  type={"number"}
+                  name="price"
+                  onChange={formik.handleChange}
+                  value={formik.values.price}
+                ></input>
+                <span style={{ color: "red" }}>{formik.errors.price}</span>
+              </div>
             </div>
-              <div className="row mt-3">
+            <div className="row mt-3">
               <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label>Description</label>
                 <input
@@ -117,18 +117,20 @@ function DailyPlanform() {
                   onChange={formik.handleChange}
                   value={formik.values.description}
                 ></input>
-                <span style={{ color: "red" }}>{formik.errors.description}</span>
+                <span style={{ color: "red" }}>
+                  {formik.errors.description}
+                </span>
               </div>
+            </div>
+            <div className="row mt-3">
+              <div className="col-lg-12">
+                <input
+                  className="btn btn-primary mt-2"
+                  type={"submit"}
+                  value="Submit"
+                ></input>
               </div>
-              <div className="row mt-3">
-                <div className="col-lg-12">
-                  <input
-                    className="btn btn-primary mt-2"
-                    type={"submit"}
-                    value="Submit"
-                  ></input>
-                </div>
-              </div>
+            </div>
           </form>
         </div>
       </div>

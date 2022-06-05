@@ -16,8 +16,8 @@ import MonthlyPlans from "./MonthlyPlans";
 import YearlyPlans from "./YearlyPlans";
 import AddExpenses from "./AddExpenses";
 import AddIncomes from "./AddIncomes";
-import MoneyInfo from "./MoneyInfo";
 import DailyPlanView from "./DailyPlanView";
+import Plans from "./Plans";
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
             <Route path="/YearlyPlans" element={<YearlyPlans />} />
             <Route path="/AddExpenses" element={<AddExpenses />} />
             <Route path="/AddIncomes" element={<AddIncomes />} />
-            <Route path="/MoneyInfo" element={<MoneyInfo />} />
+            <Route path="/Plans" element={<Plans />} />
             <Route path="/DailyPlanView" element={<DailyPlanView />} />
             <Route path="/DailyPlanView/:id" element={<DailyPlanView />} />
           </Routes>

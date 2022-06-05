@@ -1,16 +1,16 @@
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import MoneyInfo from "./MoneyInfo";
+import Home from "./Home";
 
 function AddIncomes() {
- let totalincome=0;
+  let totalincome = 0;
   let formik = useFormik({
     initialValues: {
       date: "",
       time: "",
-      income:"",
-      incometype:"",
+      income: "",
+      incometype: "",
       price: "",
       description: "",
     },
@@ -39,7 +39,6 @@ function AddIncomes() {
           "https://moneymanager-nodeapp.herokuapp.com/AddIncomes",
           values
         );
-        
       } catch (error) {
         console.log(error);
       }
@@ -54,7 +53,6 @@ function AddIncomes() {
           "https://moneymanager-nodeapp.herokuapp.com/AddIncomes"
         );
         setNewincomes(incomedata.data);
-        // setTotal(total+incomedata.data.amount)
       } catch (error) {
         console.log(error);
       }
@@ -76,22 +74,22 @@ function AddIncomes() {
       console.log(error);
     }
   };
-let showdate=new Date();
-let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getFullYear();
+  // let showdate=new Date();
+  // let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getFullYear();
   return (
     <div className="container">
-      <h2 className="mt-3 fw-bolder text-center text-danger fst-italic">Add Your Incomes</h2>
+      <h2 className="mt-3 fw-bolder text-center text-danger fst-italic">
+        Add Your Incomes
+      </h2>
       <div className="row mt-3">
         <div className="col-lg-12">
-        <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={formik.handleSubmit}>
             <div className="row">
               <div className="col-lg-6">
                 <label>Date</label>
                 <input
                   className="form-control"
                   type={"date"}
-                  // value={displaydate}
-                  // readOnly="false"
                   name="date"
                   onChange={formik.handleChange}
                   value={formik.values.date}
@@ -110,7 +108,7 @@ let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getF
                 <span style={{ color: "red" }}>{formik.errors.time}</span>
               </div>
             </div>
-            
+
             <div className="row mt-2">
               <div className="col-lg-6">
                 <label>Income</label>
@@ -141,29 +139,29 @@ let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getF
                   <option>PF</option>
                 </select>
                 <span style={{ color: "red" }}>{formik.errors.incometype}</span>
-              </div> 
+              </div>
               <div className="row mt-2">
-              <div className="col-lg-6">
-                <label>Price(₹)</label>
-                <input
-                  className="form-control"
-                  type={"number"}
-                  name="price"
-                  onChange={formik.handleChange}
-                  value={formik.values.price}
-                ></input>
-                <span style={{ color: "red" }}>{formik.errors.price}</span>
-              </div>
-              <div className="col-lg-6">
-                <label>Description</label>
-                <input
-                  className="form-control"
-                  type={"text"}
-                  name="description"
-                  onChange={formik.handleChange}
-                  value={formik.values.description}
-                ></input>
-              </div>
+                <div className="col-lg-6">
+                  <label>Price(₹)</label>
+                  <input
+                    className="form-control"
+                    type={"number"}
+                    name="price"
+                    onChange={formik.handleChange}
+                    value={formik.values.price}
+                  ></input>
+                  <span style={{ color: "red" }}>{formik.errors.price}</span>
+                </div>
+                <div className="col-lg-6">
+                  <label>Description</label>
+                  <input
+                    className="form-control"
+                    type={"text"}
+                    name="description"
+                    onChange={formik.handleChange}
+                    value={formik.values.description}
+                  ></input>
+                </div>
               </div>
               <div className="row">
                 <div className="col-lg-12">
@@ -177,8 +175,8 @@ let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getF
             </div>
           </form>
         </div>
-        </div>
-        <div className="row mt-3">
+      </div>
+      <div className="row mt-3">
         <div class="col-lg-12 table-responsive">
           <table class="table table-striped">
             <thead>
@@ -194,7 +192,7 @@ let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getF
             </thead>
             <tbody>
               {incomes.map((e) => {
-                totalincome +=e.price;
+                totalincome += e.price;
                 return (
                   <tr>
                     <td>{e.date}</td>
@@ -220,7 +218,6 @@ let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getF
       </div>
       <p className="fw-bold">Total - ₹{totalincome}</p>
     </div>
-    
   );
 }
 

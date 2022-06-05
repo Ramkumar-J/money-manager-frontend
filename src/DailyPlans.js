@@ -18,7 +18,7 @@ function DailyPlans() {
     }
     fetchDailydata();
   });
-// Note
+  // Note
   let handledelete = async (id) => {
     try {
       let ask = window.confirm(
@@ -66,18 +66,25 @@ function DailyPlans() {
                     <td>{dailyplan.price}</td>
                     <td>{dailyplan.description}</td>
                     <td>
-                    <Link
+                      <Link
                         className="btn btn-sm"
                         type="button"
-                      to={`/DailyPlanView/${dailyplan._id}`}
+                        to={`/DailyPlanView/${dailyplan._id}`}
                       >
-                        <img className="img-fluid" src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/20/external-view-user-interface-kmg-design-glyph-kmg-design.png"></img>
+                        <img
+                          className="img-fluid"
+                          src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/20/external-view-user-interface-kmg-design-glyph-kmg-design.png"
+                        ></img>
                       </Link>
                       <button
                         className="btn btn-sm"
                         type="button"
                         onClick={() => handledelete(dailyplan._id)}
-                      ><img className="img-fluid" src="https://img.icons8.com/windows/20/delete-forever.png"></img>
+                      >
+                        <img
+                          className="img-fluid"
+                          src="https://img.icons8.com/windows/20/delete-forever.png"
+                        ></img>
                       </button>
                     </td>
                   </tr>

@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 function AddExpenses() {
-  let totalexpense=0;
+  let totalexpense = 0;
   let formik = useFormik({
     initialValues: {
       date: "",
       time: "",
-      expense:"",
+      expense: "",
       expensetype: "",
       price: "",
-      description:"",
+      description: "",
     },
     validate: (values) => {
       const errors = {};
@@ -76,7 +76,9 @@ function AddExpenses() {
 
   return (
     <div className="container">
-      <h2 className="mt-3 fw-bolder text-center text-danger fst-italic">Add Your Expenses</h2>
+      <h2 className="mt-3 fw-bolder text-center text-danger fst-italic">
+        Add Your Expenses
+      </h2>
       <div className="row mt-3">
         <div className="col-lg-12">
           <form onSubmit={formik.handleSubmit}>
@@ -105,7 +107,7 @@ function AddExpenses() {
               </div>
             </div>
             <div className="row mt-2">
-            <div className="col-lg-6">
+              <div className="col-lg-6">
                 <label>Expense</label>
                 <select
                   class="form-select"
@@ -118,9 +120,7 @@ function AddExpenses() {
                   <option>Cash</option>
                   <option>Account</option>
                 </select>
-                <span style={{ color: "red" }}>
-                  {formik.errors.expense}
-                </span>
+                <span style={{ color: "red" }}>{formik.errors.expense}</span>
               </div>
               <div className="col-lg-6">
                 <label>Expense Type</label>
@@ -147,27 +147,27 @@ function AddExpenses() {
                 </span>
               </div>
               <div className="row mt-2">
-              <div className="col-lg-6">
-                <label>Price(₹)</label>
-                <input
-                  className="form-control"
-                  type={"number"}
-                  name="price"
-                  onChange={formik.handleChange}
-                  value={formik.values.price}
-                ></input>
-                <span style={{ color: "red" }}>{formik.errors.price}</span>
-              </div>
-              <div className="col-lg-6">
-                <label>Description</label>
-                <input
-                  className="form-control"
-                  type={"text"}
-                  name="description"
-                  onChange={formik.handleChange}
-                  value={formik.values.description}
-                ></input>
-              </div>
+                <div className="col-lg-6">
+                  <label>Price(₹)</label>
+                  <input
+                    className="form-control"
+                    type={"number"}
+                    name="price"
+                    onChange={formik.handleChange}
+                    value={formik.values.price}
+                  ></input>
+                  <span style={{ color: "red" }}>{formik.errors.price}</span>
+                </div>
+                <div className="col-lg-6">
+                  <label>Description</label>
+                  <input
+                    className="form-control"
+                    type={"text"}
+                    name="description"
+                    onChange={formik.handleChange}
+                    value={formik.values.description}
+                  ></input>
+                </div>
               </div>
               <div className="row">
                 <div className="col-lg-12">
@@ -181,8 +181,8 @@ function AddExpenses() {
             </div>
           </form>
         </div>
-        </div>
-        <div className="row mt-3">
+      </div>
+      <div className="row mt-3">
         <div class="col-lg-12 table-responsive">
           <table class="table table-striped">
             <thead>
@@ -198,7 +198,7 @@ function AddExpenses() {
             </thead>
             <tbody>
               {expenses.map((e) => {
-                totalexpense +=e.price;
+                totalexpense += e.price;
                 return (
                   <tr>
                     <td>{e.date}</td>

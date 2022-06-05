@@ -69,7 +69,10 @@ function YearlyPlans() {
                         type="button"
                         onClick={() => handledelete(yearlyplan._id)}
                       >
-                        <img className="img-fluid" src="https://img.icons8.com/windows/20/delete-forever.png"></img>
+                        <img
+                          className="img-fluid"
+                          src="https://img.icons8.com/windows/20/delete-forever.png"
+                        ></img>
                       </button>
                     </td>
                   </tr>
