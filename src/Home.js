@@ -81,7 +81,7 @@ function Home(props) {
   };
   return (
     <div className="container">
-      <div className="row mt-5 mb-0">
+      {/* <div className="row mt-5 mb-0">
         <div className="col-sm-12 col-md-12 col-lg-6">
           <Link
             class="nav-link btn btn-outline-success text-dark btn-sm fw-bold fs-4 mt-3 mx-auto w-50 h-75 p-0"
@@ -106,7 +106,7 @@ function Home(props) {
             Add Expenses
           </Link>
         </div>
-      </div>
+      </div> */}
       <div className="row mt-3 ms-5 me-5">
         <div className="col-sm-4 col-md-4 col-lg-4 fw-bold fs-5 text-center">
           <p>Income</p>
