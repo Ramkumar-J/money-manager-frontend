@@ -123,7 +123,7 @@ function Home(props) {
       </div>
       <div className="row mt-2">
         <div class="col-lg-12 table-responsive">
-          <table class="table table-striped">
+          <table class="table table-striped table-bordered">
             <thead>
               <tr>
                 <th>Date</th>
@@ -132,7 +132,7 @@ function Home(props) {
                 <th>Income Type/Expense Type</th>
                 <th>Price(₹)</th>
                 <th>Description</th>
-                <th>Action</th>
+                {/* <th>Action</th> */}
               </tr>
             </thead>
             <tbody>
@@ -145,14 +145,14 @@ function Home(props) {
                     <td>{e.incometype}</td>
                     <td className="text-success fw-bold">{e.price}</td>
                     <td>{e.description}</td>
-                    <td>
+                    {/* <td>
                       <button
                         className="btn btn-sm btn-danger ms-2"
                         onClick={() => handledelete(e._id)}
                       >
                         Delete
                       </button>
-                    </td>
+                    </td> */}
                   </tr>
                 );
               })}
@@ -165,14 +165,14 @@ function Home(props) {
                     <td>{e.expensetype}</td>
                     <td className="text-danger fw-bold">{e.price}</td>
                     <td>{e.description}</td>
-                    <td>
+                    {/* <td>
                       <button
                         className="btn btn-sm btn-danger ms-2"
                         onClick={() => handledeletedata(e._id)}
                       >
                         Delete
                       </button>
-                    </td>
+                    </td> */}
                   </tr>
                 );
               })}

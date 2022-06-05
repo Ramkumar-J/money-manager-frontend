@@ -190,6 +190,8 @@ function AddIncomes() {
                 <th scope="col">Action</th>
               </tr>
             </thead>
+            {
+              incomes.length > 0 ?
             <tbody>
               {incomes.map((e) => {
                 totalincome += e.price;
@@ -212,7 +214,8 @@ function AddIncomes() {
                   </tr>
                 );
               })}
-            </tbody>
+            </tbody> : <p>Loading...</p>
+}
           </table>
         </div>
       </div>

@@ -196,6 +196,8 @@ function AddExpenses() {
                 <th scope="col">Action</th>
               </tr>
             </thead>
+            {
+              expenses.length > 0 ?
             <tbody>
               {expenses.map((e) => {
                 totalexpense += e.price;
@@ -218,7 +220,8 @@ function AddExpenses() {
                   </tr>
                 );
               })}
-            </tbody>
+            </tbody> : <p>Loading...</p>
+}
           </table>
         </div>
         <p className="fw-bold">Total - ₹{totalexpense}</p>
