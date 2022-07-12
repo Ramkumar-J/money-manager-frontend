@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import "../node_modules/bootstrap-icons/font/bootstrap-icons.css"
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -16,6 +17,8 @@ import YearlyPlans from "./YearlyPlans";
 import AddExpenses from "./AddExpenses";
 import AddIncomes from "./AddIncomes";
 import DailyPlanView from "./DailyPlanView";
+import Register from "./Register";
+import Login from "./Login";
 
 function App() {
   return (
@@ -25,6 +28,8 @@ function App() {
         <div className="container-fluid">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/Home" element={<Home />} />
             <Route path="/DailyPlanform" element={<DailyPlanform />} />
             <Route path="/MonthlyPlanform" element={<MonthlyPlanform />} />

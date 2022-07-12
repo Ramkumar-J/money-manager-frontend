@@ -33,11 +33,17 @@ function MonthlyPlanform() {
       try {
         await axios.post(
           "https://moneymanager-nodeapp.herokuapp.com/MonthlyPlanform",
-          values
+          values,
+          {
+            headers:{
+              Authorization:window.localStorage.getItem("myapptoken")
+            }
+          }
         );
         navigate("/MonthlyPlans");
       } catch (error) {
         console.log(error);
+        alert("Something went wrong")
       }
     },
   });

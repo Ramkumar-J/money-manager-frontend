@@ -8,12 +8,18 @@ function DailyPlans() {
     async function fetchDailydata() {
       try {
         let daily = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/DailyPlans"
+          "https://moneymanager-nodeapp.herokuapp.com/DailyPlans",
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
         setDailyplans(daily.data);
         console.log(dailyplans);
       } catch (error) {
         console.log(error);
+        alert("Something went wrong")
       }
     }
     fetchDailydata();
@@ -26,11 +32,17 @@ function DailyPlans() {
       );
       if (ask) {
         await axios.delete(
-          `https://moneymanager-nodeapp.herokuapp.com/DailyPlans/${id}`
+          `https://moneymanager-nodeapp.herokuapp.com/DailyPlans/${id}`,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
       }
     } catch (error) {
       console.log(error);
+      alert("Something went wrong")
     }
   };
   return (
@@ -66,7 +78,7 @@ function DailyPlans() {
                     <td>{dailyplan.price}</td>
                     <td>{dailyplan.description}</td>
                     <td>
-                      <Link
+                      {/* <Link
                         className="btn btn-sm"
                         type="button"
                         to={`/DailyPlanView/${dailyplan._id}`}
@@ -75,7 +87,7 @@ function DailyPlans() {
                           className="img-fluid"
                           src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/20/external-view-user-interface-kmg-design-glyph-kmg-design.png"
                         ></img>
-                      </Link>
+                      </Link> */}
                       <button
                         className="btn btn-sm"
                         type="button"

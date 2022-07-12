@@ -7,11 +7,17 @@ function YearlyPlans() {
     async function fetchYearlydata() {
       try {
         let yearly = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/YearlyPlans"
+          "https://moneymanager-nodeapp.herokuapp.com/YearlyPlans",
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
         setMonthlyplans(yearly.data);
       } catch (error) {
         console.log(error);
+        alert("Something went wrong")
       }
     }
     fetchYearlydata();
@@ -24,11 +30,17 @@ function YearlyPlans() {
       );
       if (ask) {
         await axios.delete(
-          `https://moneymanager-nodeapp.herokuapp.com/YearlyPlans/${id}`
+          `https://moneymanager-nodeapp.herokuapp.com/YearlyPlans/${id}`,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
       }
     } catch (error) {
       console.log(error);
+      alert("Something went wrong")
     }
   };
   return (

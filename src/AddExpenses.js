@@ -36,9 +36,14 @@ function AddExpenses() {
         await axios.post(
           "https://moneymanager-nodeapp.herokuapp.com/AddExpenses",
           values
-        );
+        ,{
+          headers: {
+            Authorization: window.localStorage.getItem("myapptoken"),
+          },
+        });
       } catch (error) {
         console.log(error);
+        alert("something went wrong");
       }
     },
   });
@@ -48,11 +53,17 @@ function AddExpenses() {
     async function fetchExpensedata() {
       try {
         let expensedata = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/AddExpenses"
+          "https://moneymanager-nodeapp.herokuapp.com/AddExpenses",
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
         setNewexpenses(expensedata.data);
       } catch (error) {
         console.log(error);
+        alert("something went wrong");
       }
     }
     fetchExpensedata();
@@ -65,12 +76,18 @@ function AddExpenses() {
       );
       if (ask) {
         await axios.delete(
-          `https://moneymanager-nodeapp.herokuapp.com/AddExpenses/${id}`
+          `https://moneymanager-nodeapp.herokuapp.com/AddExpenses/${id}`,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
         // alert("data deleted");
       }
     } catch (error) {
       console.log(error);
+      alert("something went wrong");
     }
   };
 

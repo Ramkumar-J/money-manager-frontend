@@ -33,11 +33,17 @@ function DailyPlanform() {
       try {
         await axios.post(
           "https://moneymanager-nodeapp.herokuapp.com/DailyPlanform",
-          values
+          values,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
         navigate("/DailyPlans");
       } catch (error) {
         console.log(error);
+        alert("Something went wrong")
       }
     },
   });

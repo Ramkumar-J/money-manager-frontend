@@ -7,11 +7,17 @@ function MonthlyPlans() {
     async function fetchMonthlydata() {
       try {
         let monthly = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/MonthlyPlans"
+          "https://moneymanager-nodeapp.herokuapp.com/MonthlyPlans",
+          {
+            headers:{
+              Authorization:window.localStorage.getItem("myapptoken")
+            }
+          }
         );
         setMonthlyplans(monthly.data);
       } catch (error) {
         console.log(error);
+        alert("Something went wrong")
       }
     }
     fetchMonthlydata();
@@ -24,11 +30,17 @@ function MonthlyPlans() {
       );
       if (ask) {
         await axios.delete(
-          `https://moneymanager-nodeapp.herokuapp.com/MonthlyPlans/${id}`
+          `https://moneymanager-nodeapp.herokuapp.com/MonthlyPlans/${id}`,
+          {
+            headers:{
+              Authorization:window.localStorage.getItem("myapptoken")
+            }
+          }
         );
       }
     } catch (error) {
       console.log(error);
+      alert("Something went wrong")
     }
   };
   return (

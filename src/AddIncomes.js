@@ -37,10 +37,16 @@ function AddIncomes() {
       try {
         await axios.post(
           "https://moneymanager-nodeapp.herokuapp.com/AddIncomes",
-          values
+          values,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
       } catch (error) {
         console.log(error);
+        alert("Something went wrong")
       }
     },
   });
@@ -50,11 +56,17 @@ function AddIncomes() {
     async function fetchIncomedata() {
       try {
         let incomedata = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/AddIncomes"
+          "https://moneymanager-nodeapp.herokuapp.com/AddIncomes",
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
         setNewincomes(incomedata.data);
       } catch (error) {
         console.log(error);
+        alert("Something went wrong")
       }
     }
     fetchIncomedata();
@@ -67,11 +79,17 @@ function AddIncomes() {
       );
       if (ask) {
         await axios.delete(
-          `https://moneymanager-nodeapp.herokuapp.com/AddIncomes/${id}`
+          `https://moneymanager-nodeapp.herokuapp.com/AddIncomes/${id}`,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
       }
     } catch (error) {
       console.log(error);
+      alert("Something went wrong")
     }
   };
   // let showdate=new Date();

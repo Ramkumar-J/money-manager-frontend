@@ -16,12 +16,18 @@ function Home(props) {
     async function fetchIncomedata() {
       try {
         let incomedata = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/AddIncomes"
+          "https://moneymanager-nodeapp.herokuapp.com/AddIncomes",
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
         setNewincomes(incomedata.data);
         // setTotal(total+incomedata.data.amount)
       } catch (error) {
         console.log(error);
+        alert("Kindly Please Login");
       }
     }
     fetchIncomedata();
@@ -34,11 +40,17 @@ function Home(props) {
       );
       if (ask) {
         await axios.delete(
-          `https://moneymanager-nodeapp.herokuapp.com/AddIncomes/${id}`
+          `https://moneymanager-nodeapp.herokuapp.com/AddIncomes/${id}`,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
       }
     } catch (error) {
       console.log(error);
+      
     }
   };
   const [expenses, setNewexpenses] = useState([]);
@@ -54,7 +66,12 @@ function Home(props) {
     async function fetchExpensedata() {
       try {
         let expensedata = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/AddExpenses"
+          "https://moneymanager-nodeapp.herokuapp.com/AddExpenses",
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
         setNewexpenses(expensedata.data);
       } catch (error) {
@@ -71,7 +88,12 @@ function Home(props) {
       );
       if (ask) {
         await axios.delete(
-          `https://moneymanager-nodeapp.herokuapp.com/AddExpenses/${id}`
+          `https://moneymanager-nodeapp.herokuapp.com/AddExpenses/${id}`,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
         );
         // alert("data deleted");
       }

@@ -30,6 +30,7 @@ function DailyPlanView(props){
         // navigate("/DailyPlans");
       } catch (error) {
         console.log(error);
+        alert("Something went wrong")
       }
     },
   });
@@ -44,6 +45,7 @@ function DailyPlanView(props){
             // console.log(viewDatas);
           } catch (error) {
             console.log(error);
+            alert("Something went wrong")
           }
         }
         fetchViewdata();
@@ -58,6 +60,7 @@ function DailyPlanView(props){
             setView(viewdata.data);
           } catch (error) {
             console.log(error);
+            alert("Something went wrong")
           }
         }
         fetchDailydata();
