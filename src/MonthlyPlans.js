@@ -46,7 +46,7 @@ function MonthlyPlans() {
   return (
     <div className="card shadow mb-4">
       <div className="card-header py-3">
-        <h6 className="m-0 font-weight-bold text-primary">Monthly list</h6>
+      <h4 className="m-0 fw-bold text-primary">Monthly list</h4>
       </div>
       <div className="card-body">
         <div className="table-responsive">
@@ -81,7 +81,7 @@ function MonthlyPlans() {
                         type="button"
                         onClick={() => handledelete(monthlyplan._id)}
                       >
-                        <img className="img-fluid" src="https://img.icons8.com/windows/20/delete-forever.png"></img>
+                        <img className="img-fluid" src="https://img.icons8.com/windows/20/delete-forever.png" alt="delete-icon"></img>
                       </button>
                     </td>
                   </tr>

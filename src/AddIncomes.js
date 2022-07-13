@@ -1,9 +1,9 @@
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Home from "./Home";
 
 function AddIncomes() {
+  const [incomes, setNewincomes] = useState([]);
   let totalincome = 0;
   let formik = useFormik({
     initialValues: {
@@ -46,12 +46,11 @@ function AddIncomes() {
         );
       } catch (error) {
         console.log(error);
-        alert("Something went wrong")
+        alert("Something went wrong");
       }
     },
   });
 
-  const [incomes, setNewincomes] = useState([]);
   useEffect(() => {
     async function fetchIncomedata() {
       try {
@@ -66,7 +65,7 @@ function AddIncomes() {
         setNewincomes(incomedata.data);
       } catch (error) {
         console.log(error);
-        alert("Something went wrong")
+        alert("Something went wrong");
       }
     }
     fetchIncomedata();
@@ -89,11 +88,9 @@ function AddIncomes() {
       }
     } catch (error) {
       console.log(error);
-      alert("Something went wrong")
+      alert("Something went wrong");
     }
   };
-  // let showdate=new Date();
-  // let displaydate=showdate.getDate()+"/"+(showdate.getMonth()+1)+"/"+showdate.getFullYear();
   return (
     <div className="container">
       <h2 className="mt-3 fw-bolder text-center text-danger fst-italic">
@@ -208,32 +205,33 @@ function AddIncomes() {
                 <th scope="col">Action</th>
               </tr>
             </thead>
-            {
-              incomes.length > 0 ?
-            <tbody>
-              {incomes.map((e) => {
-                totalincome += e.price;
-                return (
-                  <tr>
-                    <td>{e.date}</td>
-                    <td>{e.time}</td>
-                    <td>{e.income}</td>
-                    <td>{e.incometype}</td>
-                    <td>{e.price}</td>
-                    <td>{e.description}</td>
-                    <td>
-                      <button
-                        className="btn btn-sm btn-danger ms-2"
-                        onClick={() => handledelete(e._id)}
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody> : <p>Loading...</p>
-}
+            {incomes.length > 0 ? (
+              <tbody>
+                {incomes.map((e) => {
+                  totalincome += e.price;
+                  return (
+                    <tr>
+                      <td>{e.date}</td>
+                      <td>{e.time}</td>
+                      <td>{e.income}</td>
+                      <td>{e.incometype}</td>
+                      <td>{e.price}</td>
+                      <td>{e.description}</td>
+                      <td>
+                        <button
+                          className="btn btn-sm btn-danger ms-2"
+                          onClick={() => handledelete(e._id)}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            ) : (
+              <p>Loading...</p>
+            )}
           </table>
         </div>
       </div>

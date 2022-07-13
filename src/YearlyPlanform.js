@@ -43,7 +43,7 @@ function YearlyPlanform() {
         navigate("/YearlyPlans");
       } catch (error) {
         console.log(error);
-        alert("Something went wrong")
+        alert("Something went wrong");
       }
     },
   });
@@ -92,6 +92,8 @@ function YearlyPlanform() {
                   <option selected>None</option>
                   <option>Food</option>
                   <option>Fuel</option>
+                  <option>Grocery</option>
+                  <option>Recharge</option>
                   <option>Cloths</option>
                   <option>Electronics</option>
                   <option>Entertainment</option>

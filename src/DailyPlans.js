@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 function DailyPlans() {
   const [dailyplans, setDailyplans] = useState([]);
@@ -19,12 +18,11 @@ function DailyPlans() {
         console.log(dailyplans);
       } catch (error) {
         console.log(error);
-        alert("Something went wrong")
+        alert("Something went wrong");
       }
     }
     fetchDailydata();
   });
-  // Note
   let handledelete = async (id) => {
     try {
       let ask = window.confirm(
@@ -42,13 +40,13 @@ function DailyPlans() {
       }
     } catch (error) {
       console.log(error);
-      alert("Something went wrong")
+      alert("Something went wrong");
     }
   };
   return (
     <div className="card shadow mb-4">
       <div className="card-header py-3">
-        <h6 className="m-0 font-weight-bold text-primary">Daily list</h6>
+        <h4 className="m-0 fw-bold text-primary">Daily list</h4>
       </div>
       <div className="card-body">
         <div className="table-responsive">
@@ -96,6 +94,7 @@ function DailyPlans() {
                         <img
                           className="img-fluid"
                           src="https://img.icons8.com/windows/20/delete-forever.png"
+                          alt="delete-icon"
                         ></img>
                       </button>
                     </td>

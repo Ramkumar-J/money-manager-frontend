@@ -35,15 +35,15 @@ function MonthlyPlanform() {
           "https://moneymanager-nodeapp.herokuapp.com/MonthlyPlanform",
           values,
           {
-            headers:{
-              Authorization:window.localStorage.getItem("myapptoken")
-            }
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
           }
         );
         navigate("/MonthlyPlans");
       } catch (error) {
         console.log(error);
-        alert("Something went wrong")
+        alert("Something went wrong");
       }
     },
   });
@@ -92,6 +92,8 @@ function MonthlyPlanform() {
                   <option selected>None</option>
                   <option>Food</option>
                   <option>Fuel</option>
+                  <option>Grocery</option>
+                  <option>Recharge</option>
                   <option>Cloths</option>
                   <option>Electronics</option>
                   <option>Entertainment</option>
@@ -102,19 +104,19 @@ function MonthlyPlanform() {
                 </span>
               </div>
               <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                  <label>Price(₹)</label>
-                  <input
-                    className="form-control"
-                    type={"number"}
-                    name="price"
-                    onChange={formik.handleChange}
-                    value={formik.values.price}
-                  ></input>
-                  <span style={{ color: "red" }}>{formik.errors.price}</span>
-                </div>
+                <label>Price(₹)</label>
+                <input
+                  className="form-control"
+                  type={"number"}
+                  name="price"
+                  onChange={formik.handleChange}
+                  value={formik.values.price}
+                ></input>
+                <span style={{ color: "red" }}>{formik.errors.price}</span>
               </div>
-              <div className="row mt-3">
-                <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            </div>
+            <div className="row mt-3">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label>Description</label>
                 <input
                   className="form-control"
@@ -124,16 +126,16 @@ function MonthlyPlanform() {
                   value={formik.values.description}
                 ></input>
               </div>
+            </div>
+            <div className="row mt-3">
+              <div className="col-lg-12">
+                <input
+                  className="btn btn-primary mt-2"
+                  type={"submit"}
+                  value="Submit"
+                ></input>
               </div>
-              <div className="row mt-3">
-                <div className="col-lg-12">
-                  <input
-                    className="btn btn-primary mt-2"
-                    type={"submit"}
-                    value="Submit"
-                  ></input>
-                </div>
-              </div>
+            </div>
           </form>
         </div>
       </div>

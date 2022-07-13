@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 function AddExpenses() {
+  const [expenses, setNewexpenses] = useState([]);
   let totalexpense = 0;
   let formik = useFormik({
     initialValues: {
@@ -48,7 +49,6 @@ function AddExpenses() {
     },
   });
 
-  const [expenses, setNewexpenses] = useState([]);
   useEffect(() => {
     async function fetchExpensedata() {
       try {
@@ -83,7 +83,6 @@ function AddExpenses() {
             },
           }
         );
-        // alert("data deleted");
       }
     } catch (error) {
       console.log(error);

@@ -43,7 +43,7 @@ function DailyPlanform() {
         navigate("/DailyPlans");
       } catch (error) {
         console.log(error);
-        alert("Something went wrong")
+        alert("Something went wrong");
       }
     },
   });
@@ -91,6 +91,7 @@ function DailyPlanform() {
                 >
                   <option selected>None</option>
                   <option>Food</option>
+                  <option>Grocery</option>
                   <option>Fuel</option>
                   <option>Cloths</option>
                   <option>Electronics</option>

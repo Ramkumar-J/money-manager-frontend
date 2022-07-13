@@ -2,11 +2,11 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
-  let navigate=useNavigate();
-  let handleLogout=() => {
+  let navigate = useNavigate();
+  let handleLogout = () => {
     window.localStorage.removeItem("myapptoken");
     navigate("/login");
-  }
+  };
   return (
     <header>
       <nav class="navbar navbar-expand-md navbar-primary bg-dark">
@@ -39,7 +39,7 @@ function Navbar() {
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
-            <li class="nav-item ms-3 fs-5">
+              <li class="nav-item ms-3 fs-5">
                 <Link
                   class="nav-link btn btn-outline-success text-white btn-sm fs-5 m-1 p-1"
                   to="/AddIncomes"
@@ -107,22 +107,6 @@ function Navbar() {
                   </li>
                 </ul>
               </li>
-              {/* <li class="nav-item ms-3 fs-5">
-                <Link
-                  class="nav-link btn btn-outline-success text-white btn-sm fs-5 m-1 p-1"
-                  to="/AddIncomes"
-                >
-                  Add Incomes
-                </Link>
-              </li>
-              <li class="nav-item ms-3 fs-5">
-                <Link
-                  class="nav-link btn btn-outline-danger text-white btn-sm fs-5 m-1 p-1"
-                  to="/AddExpenses"
-                >
-                  Add Expenses
-                </Link>
-              </li> */}
               <li class="nav-item">
                 <Link
                   class="nav-link active fs-5 text-primary"
@@ -141,7 +125,7 @@ function Navbar() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                <i class="bi bi-person-circle"></i>
+                  <i class="bi bi-person-circle"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
@@ -160,17 +144,6 @@ function Navbar() {
                 </ul>
               </li>
             </ul>
-            {/* <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-primary" type="submit">
-              <img src="https://img.icons8.com/glyph-neue/20/search--v1.png"></img>
-            </button>
-          </form> */}
           </div>
         </div>
       </nav>

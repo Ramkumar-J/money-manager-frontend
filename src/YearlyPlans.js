@@ -17,7 +17,7 @@ function YearlyPlans() {
         setMonthlyplans(yearly.data);
       } catch (error) {
         console.log(error);
-        alert("Something went wrong")
+        alert("Something went wrong");
       }
     }
     fetchYearlydata();
@@ -40,13 +40,13 @@ function YearlyPlans() {
       }
     } catch (error) {
       console.log(error);
-      alert("Something went wrong")
+      alert("Something went wrong");
     }
   };
   return (
     <div className="card shadow mb-4">
       <div className="card-header py-3">
-        <h6 className="m-0 font-weight-bold text-primary">Yearly list</h6>
+        <h4 className="m-0 fw-bold text-primary">Yearly list</h4>
       </div>
       <div className="card-body">
         <div className="table-responsive">
