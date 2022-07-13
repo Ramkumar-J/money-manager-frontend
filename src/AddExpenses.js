@@ -36,12 +36,13 @@ function AddExpenses() {
       try {
         await axios.post(
           "https://moneymanager-nodeapp.herokuapp.com/AddExpenses",
-          values
-        ,{
-          headers: {
-            Authorization: window.localStorage.getItem("myapptoken"),
-          },
-        });
+          values,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("myapptoken"),
+            },
+          }
+        );
       } catch (error) {
         console.log(error);
         alert("something went wrong");
@@ -212,32 +213,33 @@ function AddExpenses() {
                 <th scope="col">Action</th>
               </tr>
             </thead>
-            {
-              expenses.length > 0 ?
-            <tbody>
-              {expenses.map((e) => {
-                totalexpense += e.price;
-                return (
-                  <tr>
-                    <td>{e.date}</td>
-                    <td>{e.time}</td>
-                    <td>{e.expense}</td>
-                    <td>{e.expensetype}</td>
-                    <td>{e.price}</td>
-                    <td>{e.description}</td>
-                    <td>
-                      <button
-                        className="btn btn-sm btn-danger ms-2"
-                        onClick={() => handledelete(e._id)}
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody> : <p>Loading...</p>
-}
+            {expenses.length > 0 ? (
+              <tbody>
+                {expenses.map((e) => {
+                  totalexpense += e.price;
+                  return (
+                    <tr>
+                      <td>{e.date}</td>
+                      <td>{e.time}</td>
+                      <td>{e.expense}</td>
+                      <td>{e.expensetype}</td>
+                      <td>{e.price}</td>
+                      <td>{e.description}</td>
+                      <td>
+                        <button
+                          className="btn btn-sm btn-danger ms-2"
+                          onClick={() => handledelete(e._id)}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            ) : (
+              <p>Loading...</p>
+            )}
           </table>
         </div>
         <p className="fw-bold">Total - ₹{totalexpense}</p>
