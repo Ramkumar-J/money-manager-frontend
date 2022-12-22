@@ -16,7 +16,7 @@ function Home(props) {
     async function fetchIncomedata() {
       try {
         let incomedata = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/AddIncomes",
+          "https://money-manager-backend-one.vercel.app/AddIncomes",
           {
             headers: {
               Authorization: window.localStorage.getItem("myapptoken"),
@@ -45,7 +45,7 @@ function Home(props) {
     async function fetchExpensedata() {
       try {
         let expensedata = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/AddExpenses",
+          "https://money-manager-backend-one.vercel.app/AddExpenses",
           {
             headers: {
               Authorization: window.localStorage.getItem("myapptoken"),

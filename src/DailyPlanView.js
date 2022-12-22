@@ -24,7 +24,7 @@ function DailyPlanView(props){
     onSubmit: async (values) => {
       try {
         await axios.post(
-          "https://moneymanager-nodeapp.herokuapp.com/DailyPlanView",
+          "https://money-manager-backend-one.vercel.app/DailyPlanView",
           values
         );
         // navigate("/DailyPlans");
@@ -39,7 +39,7 @@ function DailyPlanView(props){
         async function fetchViewdata() {
           try {
             let viewPlan = await axios.get(
-              "https://moneymanager-nodeapp.herokuapp.com/DailyPlanView"
+              "https://money-manager-backend-one.vercel.app/DailyPlanView"
             );
             setViewDatas(viewPlan.data);
             // console.log(viewDatas);
@@ -55,7 +55,7 @@ function DailyPlanView(props){
         async function fetchDailydata() {
           try {
             let viewdata = await axios.get(
-              `https://moneymanager-nodeapp.herokuapp.com/DailyPlans/${params.id}`
+              `https://money-manager-backend-one.vercel.app/DailyPlans/${params.id}`
             );
             setView(viewdata.data);
           } catch (error) {

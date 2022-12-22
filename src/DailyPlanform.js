@@ -32,7 +32,7 @@ function DailyPlanform() {
     onSubmit: async (values) => {
       try {
         await axios.post(
-          "https://moneymanager-nodeapp.herokuapp.com/DailyPlanform",
+          "https://money-manager-backend-one.vercel.app/DailyPlanform",
           values,
           {
             headers: {

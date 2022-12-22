@@ -7,7 +7,7 @@ function DailyPlans() {
     async function fetchDailydata() {
       try {
         let daily = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/DailyPlans",
+          "https://money-manager-backend-one.vercel.app/DailyPlans",
           {
             headers: {
               Authorization: window.localStorage.getItem("myapptoken"),
@@ -30,7 +30,7 @@ function DailyPlans() {
       );
       if (ask) {
         await axios.delete(
-          `https://moneymanager-nodeapp.herokuapp.com/DailyPlans/${id}`,
+          `https://money-manager-backend-one.vercel.app/DailyPlans/${id}`,
           {
             headers: {
               Authorization: window.localStorage.getItem("myapptoken"),

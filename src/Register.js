@@ -26,7 +26,7 @@ function Register() {
     },
     onSubmit: async (values) => {
       await axios.post(
-        "https://moneymanager-nodeapp.herokuapp.com/register",
+        "https://money-manager-backend-one.vercel.app/register",
         values
       );
       navigate("/login");

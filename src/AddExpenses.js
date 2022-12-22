@@ -35,7 +35,7 @@ function AddExpenses() {
     onSubmit: async (values) => {
       try {
         await axios.post(
-          "https://moneymanager-nodeapp.herokuapp.com/AddExpenses",
+          "https://money-manager-backend-one.vercel.app/AddExpenses",
           values,
           {
             headers: {
@@ -54,7 +54,7 @@ function AddExpenses() {
     async function fetchExpensedata() {
       try {
         let expensedata = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/AddExpenses",
+          "https://money-manager-backend-one.vercel.app/AddExpenses",
           {
             headers: {
               Authorization: window.localStorage.getItem("myapptoken"),
@@ -77,7 +77,7 @@ function AddExpenses() {
       );
       if (ask) {
         await axios.delete(
-          `https://moneymanager-nodeapp.herokuapp.com/AddExpenses/${id}`,
+          `https://money-manager-backend-one.vercel.app/AddExpenses/${id}`,
           {
             headers: {
               Authorization: window.localStorage.getItem("myapptoken"),

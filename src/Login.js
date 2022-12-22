@@ -22,7 +22,7 @@ function Login() {
     },
     onSubmit: async (values) => {
       let logindata = await axios.post(
-        "https://moneymanager-nodeapp.herokuapp.com/login",
+        "https://money-manager-backend-one.vercel.app/login",
         values
       );
       window.localStorage.setItem("myapptoken", logindata.data.jwtToken);

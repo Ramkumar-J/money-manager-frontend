@@ -7,7 +7,7 @@ function YearlyPlans() {
     async function fetchYearlydata() {
       try {
         let yearly = await axios.get(
-          "https://moneymanager-nodeapp.herokuapp.com/YearlyPlans",
+          "https://money-manager-backend-one.vercel.app/YearlyPlans",
           {
             headers: {
               Authorization: window.localStorage.getItem("myapptoken"),
@@ -30,7 +30,7 @@ function YearlyPlans() {
       );
       if (ask) {
         await axios.delete(
-          `https://moneymanager-nodeapp.herokuapp.com/YearlyPlans/${id}`,
+          `https://money-manager-backend-one.vercel.app/YearlyPlans/${id}`,
           {
             headers: {
               Authorization: window.localStorage.getItem("myapptoken"),
