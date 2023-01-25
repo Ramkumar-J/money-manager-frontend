@@ -100,7 +100,7 @@ function AddExpenses() {
         <div className="col-lg-12">
           <form onSubmit={formik.handleSubmit}>
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                 <label>Date</label>
                 <input
                   className="form-control"
@@ -111,7 +111,7 @@ function AddExpenses() {
                 ></input>
                 <span style={{ color: "red" }}>{formik.errors.date}</span>
               </div>
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                 <label>Time</label>
                 <input
                   className="form-control"
@@ -124,7 +124,7 @@ function AddExpenses() {
               </div>
             </div>
             <div className="row mt-2">
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                 <label>Expense</label>
                 <select
                   class="form-select"
@@ -139,7 +139,7 @@ function AddExpenses() {
                 </select>
                 <span style={{ color: "red" }}>{formik.errors.expense}</span>
               </div>
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                 <label>Expense Type</label>
                 <select
                   class="form-select"
@@ -164,7 +164,7 @@ function AddExpenses() {
                 </span>
               </div>
               <div className="row mt-2">
-                <div className="col-lg-6">
+                <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                   <label>Price(₹)</label>
                   <input
                     className="form-control"
@@ -175,7 +175,7 @@ function AddExpenses() {
                   ></input>
                   <span style={{ color: "red" }}>{formik.errors.price}</span>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                   <label>Description</label>
                   <input
                     className="form-control"

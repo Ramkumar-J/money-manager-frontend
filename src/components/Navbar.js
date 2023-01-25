@@ -9,7 +9,7 @@ function Navbar() {
   };
   return (
     <header>
-      <nav class="navbar navbar-expand-md navbar-primary bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
         <div class="container-fluid">
           <Link
             class="navbar-brand fs-3 fw-bolder text-uppercase text-warning font"
@@ -17,7 +17,7 @@ function Navbar() {
           >
             <img
               className="img-fluid"
-              src="https://img.icons8.com/fluency/50/money-box.png"
+              src="./assets/money_manager_logo.png"
             ></img>{" "}
             IE Tracker
           </Link>

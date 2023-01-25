@@ -100,7 +100,7 @@ function AddIncomes() {
         <div className="col-lg-12">
           <form onSubmit={formik.handleSubmit}>
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                 <label>Date</label>
                 <input
                   className="form-control"
@@ -111,7 +111,7 @@ function AddIncomes() {
                 ></input>
                 <span style={{ color: "red" }}>{formik.errors.date}</span>
               </div>
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                 <label>Time</label>
                 <input
                   className="form-control"
@@ -125,7 +125,7 @@ function AddIncomes() {
             </div>
 
             <div className="row mt-2">
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                 <label>Income</label>
                 <select
                   className="form-select"
@@ -139,7 +139,7 @@ function AddIncomes() {
                 </select>
                 <span style={{ color: "red" }}>{formik.errors.income}</span>
               </div>
-              <div className="col-lg-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                 <label>Income Type</label>
                 <select
                   className="form-select"
@@ -156,7 +156,7 @@ function AddIncomes() {
                 <span style={{ color: "red" }}>{formik.errors.incometype}</span>
               </div>
               <div className="row mt-2">
-                <div className="col-lg-6">
+                <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                   <label>Price(₹)</label>
                   <input
                     className="form-control"
@@ -167,7 +167,7 @@ function AddIncomes() {
                   ></input>
                   <span style={{ color: "red" }}>{formik.errors.price}</span>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                   <label>Description</label>
                   <input
                     className="form-control"

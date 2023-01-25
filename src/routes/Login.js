@@ -39,7 +39,7 @@ function Login() {
         </div>
       </div>
       <div className="row mt-1">
-        <div className="col-lg-6">
+        <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
           <img
             className="img-fluid bg-secondary"
             src="./assets/IE_tracker_register_image.jpg"
@@ -47,7 +47,7 @@ function Login() {
           ></img>
         </div>
 
-        <div className="col-lg-6 d-flex  justify-content-center align-items-center fs-6">
+        <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex  justify-content-center align-items-center fs-6">
           <form onSubmit={formik.handleSubmit}>
             <div className="row mt-3">
               <div className="col-lg-12">
