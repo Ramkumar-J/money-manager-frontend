@@ -1,21 +1,17 @@
+import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 
-function Register() {
+function Login() {
   let navigate = useNavigate();
   let formik = useFormik({
     initialValues: {
-      username: "",
       email: "",
       password: "",
     },
     validate: (values) => {
       const errors = {};
-      if (!values.username) {
-        errors.username = "Required";
-      }
       if (!values.email) {
         errors.email = "Required";
       }
@@ -25,11 +21,12 @@ function Register() {
       return errors;
     },
     onSubmit: async (values) => {
-      await axios.post(
-        "https://money-manager-backend-one.vercel.app/register",
+      let logindata = await axios.post(
+        "https://money-manager-backend-one.vercel.app/login",
         values
       );
-      navigate("/login");
+      window.localStorage.setItem("myapptoken", logindata.data.jwtToken);
+      navigate("/home");
     },
   });
   return (
@@ -37,37 +34,21 @@ function Register() {
       <div className="row mt-3">
         <div className="col-lg-12">
           <h1 className="text-center text-primary fw-bold fst-italic">
-            Register Here
+            Login and Go🏃‍♂️
           </h1>
         </div>
       </div>
-      <div className="row mt-2">
+      <div className="row mt-1">
         <div className="col-lg-6">
           <img
-            className="img-fluid"
-            src="https://static.vecteezy.com/system/resources/previews/005/006/044/non_2x/risk-management-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-vector.jpg"
+            className="img-fluid bg-secondary"
+            src="./assets/IE_tracker_register_image.jpg"
+            alt="Money with Income and Expense Arrow"
           ></img>
         </div>
 
         <div className="col-lg-6 d-flex  justify-content-center align-items-center fs-6">
           <form onSubmit={formik.handleSubmit}>
-            <div className="row mt-3">
-              <div className="col-lg-12">
-                <label for="username">User Name</label>
-                <input
-                  className="form-control border-primary mt-1 box"
-                  type={"text"}
-                  id="username"
-                  placeholder="Name"
-                  name="username"
-                  onChange={formik.handleChange}
-                  value={formik.values.username}
-                ></input>
-                {formik.touched.username && formik.errors.username ? (
-                  <div className="text-danger">{formik.errors.username}</div>
-                ) : null}
-              </div>
-            </div>
             <div className="row mt-3">
               <div className="col-lg-12">
                 <label for="email">Email Address</label>
@@ -103,11 +84,18 @@ function Register() {
               </div>
             </div>
             <div className="row mt-0">
+            <div className="col-lg-12">
+              <p className="mb-0">For Demo,</p>
+              <p className="mb-0">E-mail: person1@gmail.com</p>
+              <p className="mb-0">Password: person1@123</p>
+            </div>
+            </div>
+            <div className="row mt-0">
               <div className="col-lg-12">
                 <sub className="text-dark">
-                  Are you already Registered{" "}
-                  <Link className="text-danger fs-5" to="/login">
-                    Login
+                  Are you Not Registered{" "}
+                  <Link className="text-danger fs-5" to="/register">
+                    Register
                   </Link>
                 </sub>
               </div>
@@ -128,4 +116,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Login;
